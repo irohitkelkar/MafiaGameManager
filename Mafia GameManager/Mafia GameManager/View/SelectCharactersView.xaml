@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="Mafia_GameManager.View.SelectCharactersView"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+
+        <StackLayout Padding="10" Spacing="10" >
+
+            <StackLayout  Orientation="Horizontal" Padding="20,20,30,20"
+                          HorizontalOptions="FillAndExpand"
+                          BackgroundColor="{StaticResource CellColor2}">
+                <Label FontAttributes="Bold" FontSize="16" Text="Number of Players"/>
+                <Label FontAttributes="Bold" FontSize="16" Text="{Binding NoOfPlayers}" HorizontalOptions="EndAndExpand"></Label>
+                
+            </StackLayout>
+
+            <StackLayout Spacing="20">
+
+                <StackLayout Padding="20" Orientation="Horizontal"
+                          HorizontalOptions="FillAndExpand"
+                          BackgroundColor="{StaticResource CellColor}">
+                    <Label  VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        FontSize="16" 
+                        Text="Select Number of Mafias"/>
+                    <Picker 
+                    Title="Select No Of Mafias" HorizontalTextAlignment="Center"
+                    WidthRequest="30"
+                    HorizontalOptions="EndAndExpand"
+                    ItemsSource="{Binding Numbers}"
+                    SelectedItem="{Binding NoOfMafia}"
+                    SelectedIndex="0"/>
+                </StackLayout>
+
+
+
+                <StackLayout  Padding="20" Orientation="Horizontal"
+                          HorizontalOptions="FillAndExpand"
+                          BackgroundColor="{StaticResource CellColor}">
+                    <Label  VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        FontSize="16" 
+                        Text="Select Number of Doctors"/>
+                    <Picker 
+                    Title="Select No Of Doctors" HorizontalTextAlignment="Center"
+                    WidthRequest="30"
+                    HorizontalOptions="EndAndExpand"
+                    ItemsSource="{Binding Numbers}"
+                    SelectedItem="{Binding NoOfDoctor}"
+                    SelectedIndex="0"/>
+                </StackLayout>
+
+                <StackLayout  Padding="20" Orientation="Horizontal"
+                          HorizontalOptions="FillAndExpand"
+                          BackgroundColor="{StaticResource CellColor}">
+                    <Label  VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        FontSize="16" 
+                        Text="Select Number of Police"/>
+                    <Picker 
+                    Title="Select No Of Police" HorizontalTextAlignment="Center"
+                    WidthRequest="30"
+                    HorizontalOptions="EndAndExpand"
+                    ItemsSource="{Binding Numbers}"
+                    SelectedItem="{Binding NoOfPolice}"
+                    SelectedIndex="0"/>
+                </StackLayout>
+
+
+                <StackLayout  Padding="20" Orientation="Horizontal"
+                          HorizontalOptions="FillAndExpand"
+                          BackgroundColor="{StaticResource CellColor}">
+                    <Label  VerticalOptions="Center" 
+                        FontAttributes="Bold"
+                        FontSize="16" 
+                        Text="Select Number of Citizens"/>
+                    <Picker 
+                    Title="Select No Of Citizens" HorizontalTextAlignment="Center"
+                    WidthRequest="30"
+                    HorizontalOptions="EndAndExpand"
+                    ItemsSource="{Binding Numbers}"
+                    SelectedItem="{Binding NoOfCitizen}"
+                    SelectedIndex="0"/>
+                </StackLayout>
+
+          
+
+            </StackLayout>
+
+
+            <Label Padding="10" 
+                   FontSize="14"
+                   TextColor="{StaticResource PrimaryButton}"
+                   VerticalOptions="EndAndExpand" 
+                Text="* The total number of characters should be equal to the total number of players in order to proceed."/>
+
+
+            <Button 
+                Text="Generate Game"
+                VerticalOptions="EndAndExpand"
+                BackgroundColor="{StaticResource Primary}" 
+                TextColor="White"
+                 Command="{Binding NextCommand}"></Button>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
